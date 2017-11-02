@@ -37,16 +37,20 @@ all: $(OBJETS)
 
 
 $(REP_OBJ)/DM_DeviceAdapter.o: src/DM_DeviceAdapter.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_DeviceAdapter.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) $(INCS_FTX) -c src/DM_DeviceAdapter.c 
 
 $(REP_OBJ)/DM_SystemCalls.o: src/DM_SystemCalls.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_SystemCalls.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) $(INCS_FTX) -c src/DM_SystemCalls.c 
 
 $(REP_OBJ)/DM_ComponentCalls.o: src/DM_ComponentCalls.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_ComponentCalls.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) $(INCS_FTX) -c src/DM_ComponentCalls.c 
 
 ifeq ($(USE_SIMU), Y)
 $(REP_OBJ)/simu : src/DM_StatSimulator.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/simu $(INCS) src/DM_StatSimulator.c
 endif
 

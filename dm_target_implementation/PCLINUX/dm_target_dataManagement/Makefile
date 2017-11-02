@@ -31,6 +31,7 @@ all: $(OBJETS)
 
 
 $(REP_OBJ)/DM_DAT1_ParameterData.o: src/DM_DAT1_ParameterData.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_DAT1_ParameterData.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) $(INCS_FTX) -c src/DM_DAT1_ParameterData.c 
 
 

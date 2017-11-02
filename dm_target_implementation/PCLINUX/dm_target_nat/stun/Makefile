@@ -31,6 +31,7 @@ CWMP_C_FLAGS += -DCONFIG_CRYPTO_INTERNAL
 all: $(OBJ_THREADS_FILES)
 
 $(OBJ_DIR)/%.o: src/%.c
+	@echo " CC $@"
 	@$(CC) $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -o $@ -c $<
 
 clean :

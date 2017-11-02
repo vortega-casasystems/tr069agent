@@ -32,9 +32,11 @@ all: $(OBJETS)
 
 
 $(REP_OBJ)/DM_GlobalUtils.o: src/DM_GlobalUtils.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_GlobalUtils.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_GlobalUtils.c
 	
 $(REP_OBJ)/DM_CMN_Thread.o: src/DM_CMN_Thread.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/DM_CMN_Thread.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_CMN_Thread.c
 	
 clean:

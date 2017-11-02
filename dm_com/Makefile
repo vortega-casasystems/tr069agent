@@ -38,18 +38,23 @@ OBJETS  = $(REP_OBJ)/dm_com.o         \
 all: $(OBJETS)
 
 $(REP_OBJ)/dm_com.o: src/dm_com.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/dm_com.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_com.c
 
 $(REP_OBJ)/dm_com_rpc_acs.o: src/dm_com_rpc_acs.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/dm_com_rpc_acs.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_com_rpc_acs.c
 	
 $(REP_OBJ)/dm_com_digest.o: src/dm_com_digest.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/dm_com_digest.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_com_digest.c
 
 $(REP_OBJ)/md5.o: src/md5.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/md5.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/md5.c
 	
 $(REP_OBJ)/dm_com_utils.o: src/dm_com_utils.c
+	@echo " CC $@"
 	@$(CC) -o $(REP_OBJ)/dm_com_utils.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_com_utils.c
 
 clean:
