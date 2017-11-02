@@ -83,79 +83,79 @@ all: $(OBJETS)
 
 
 $(REP_OBJ)/DM_ENG_Common.o: src/DM_ENG_Common.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_Common.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_Common.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_Common.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_Common.c
 
 $(REP_OBJ)/DM_ENG_DeviceIdStruct.o: src/DM_ENG_DeviceIdStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_DeviceIdStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DeviceIdStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_DeviceIdStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DeviceIdStruct.c
 	
 $(REP_OBJ)/DM_ENG_TransferRequest.o: src/DM_ENG_TransferRequest.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_TransferRequest.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferRequest.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_TransferRequest.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferRequest.c
 	
 $(REP_OBJ)/DM_ENG_AllQueuedTransferStruct.o: src/DM_ENG_AllQueuedTransferStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_AllQueuedTransferStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_AllQueuedTransferStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_AllQueuedTransferStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_AllQueuedTransferStruct.c
 	
 $(REP_OBJ)/DM_ENG_TransferResultStruct.o: src/DM_ENG_TransferResultStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_TransferResultStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferResultStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_TransferResultStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferResultStruct.c
 	
 $(REP_OBJ)/DM_ENG_EntityType.o: src/DM_ENG_EntityType.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_EntityType.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_EntityType.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_EntityType.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_EntityType.c
 	
 $(REP_OBJ)/DM_ENG_EventStruct.o: src/DM_ENG_EventStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_EventStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_EventStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_EventStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_EventStruct.c
 	
 $(REP_OBJ)/DM_ENG_InformMessageScheduler.o: src/DM_ENG_InformMessageScheduler.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_InformMessageScheduler.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_InformMessageScheduler.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_InformMessageScheduler.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_InformMessageScheduler.c
 	
 $(REP_OBJ)/DM_ENG_NotificationInterface.o: src/DM_ENG_NotificationInterface.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_NotificationInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_NotificationInterface.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_NotificationInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_NotificationInterface.c
 
 $(REP_OBJ)/DM_ENG_ParameterAttributesStruct.o: src/DM_ENG_ParameterAttributesStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ParameterAttributesStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterAttributesStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ParameterAttributesStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterAttributesStruct.c
 
 $(REP_OBJ)/DM_ENG_Parameter.o: src/DM_ENG_Parameter.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_Parameter.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_Parameter.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_Parameter.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_Parameter.c
 
 $(REP_OBJ)/DM_ENG_ParameterInfoStruct.o: src/DM_ENG_ParameterInfoStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ParameterInfoStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterInfoStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ParameterInfoStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterInfoStruct.c
 
 $(REP_OBJ)/DM_ENG_ParameterManager.o: src/DM_ENG_ParameterManager.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ParameterManager.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterManager.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ParameterManager.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterManager.c
 
 $(REP_OBJ)/DM_ENG_ParameterType.o: src/DM_ENG_ParameterType.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ParameterType.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterType.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ParameterType.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterType.c
 
 $(REP_OBJ)/DM_ENG_ParameterValueStruct.o: src/DM_ENG_ParameterValueStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ParameterValueStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterValueStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ParameterValueStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ParameterValueStruct.c
 
 $(REP_OBJ)/DM_ENG_DownloadRequest.o: src/DM_ENG_DownloadRequest.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_DownloadRequest.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DownloadRequest.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_DownloadRequest.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DownloadRequest.c
 
 $(REP_OBJ)/DM_ENG_DiagnosticsLauncher.o: src/DM_ENG_DiagnosticsLauncher.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_DiagnosticsLauncher.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DiagnosticsLauncher.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_DiagnosticsLauncher.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DiagnosticsLauncher.c
 
 $(REP_OBJ)/DM_ENG_RPCInterface.o: src/DM_ENG_RPCInterface.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_RPCInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_RPCInterface.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_RPCInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_RPCInterface.c
 
 $(REP_OBJ)/DM_ENG_SetParameterValuesFault.o: src/DM_ENG_SetParameterValuesFault.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_SetParameterValuesFault.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SetParameterValuesFault.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_SetParameterValuesFault.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SetParameterValuesFault.c
 
 $(REP_OBJ)/DM_ENG_SystemNotificationStruct.o: src/DM_ENG_SystemNotificationStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_SystemNotificationStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SystemNotificationStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_SystemNotificationStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SystemNotificationStruct.c
 
 $(REP_OBJ)/DM_ENG_TransferCompleteStruct.o: src/DM_ENG_TransferCompleteStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_TransferCompleteStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferCompleteStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_TransferCompleteStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_TransferCompleteStruct.c
 
 $(REP_OBJ)/DM_ENG_SampleDataStruct.o: src/DM_ENG_SampleDataStruct.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_SampleDataStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SampleDataStruct.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_SampleDataStruct.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_SampleDataStruct.c
 
 $(REP_OBJ)/DM_ENG_StatisticsModule.o: src/DM_ENG_StatisticsModule.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_StatisticsModule.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_StatisticsModule.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_StatisticsModule.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_StatisticsModule.c
 
 $(REP_OBJ)/DM_ENG_ComputedExp.o: src/DM_ENG_ComputedExp.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_ComputedExp.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ComputedExp.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_ComputedExp.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_ComputedExp.c
 
 $(REP_OBJ)/DM_ENG_DataModelConfiguration.o: src/DM_ENG_DataModelConfiguration.c
-	$(CC) -o $(REP_OBJ)/DM_ENG_DataModelConfiguration.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DataModelConfiguration.c
+	@$(CC) -o $(REP_OBJ)/DM_ENG_DataModelConfiguration.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_ENG_DataModelConfiguration.c
 
 clean:
 	rm -f $(REP_OBJ)/*.o

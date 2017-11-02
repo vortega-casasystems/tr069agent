@@ -36,16 +36,16 @@ OBJETS  = $(REP_OBJ)/DM_COM_HttpServerInterface.o    \
 all: $(OBJETS)
 
 $(REP_OBJ)/DM_COM_HttpServerInterface.o: src/DM_COM_HttpServerInterface.c
-	$(CC) -o $(REP_OBJ)/DM_COM_HttpServerInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_HttpServerInterface.c
+	@$(CC) -o $(REP_OBJ)/DM_COM_HttpServerInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_HttpServerInterface.c
 	
 $(REP_OBJ)/DM_COM_HttpClientInterface.o: src/DM_COM_HttpClientInterface.c
-	$(CC) -o $(REP_OBJ)/DM_COM_HttpClientInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_HttpClientInterface.c
+	@$(CC) -o $(REP_OBJ)/DM_COM_HttpClientInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_HttpClientInterface.c
 
 $(REP_OBJ)/DM_COM_DomXmlParserInterface.o: src/DM_COM_DomXmlParserInterface.c
-	$(CC) -o $(REP_OBJ)/DM_COM_DomXmlParserInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_DomXmlParserInterface.c
+	@$(CC) -o $(REP_OBJ)/DM_COM_DomXmlParserInterface.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_DomXmlParserInterface.c
 
 $(REP_OBJ)/DM_COM_ConnectionSecurity.o: src/DM_COM_ConnectionSecurity.c
-	$(CC) -o $(REP_OBJ)/DM_COM_ConnectionSecurity.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_ConnectionSecurity.c
+	@$(CC) -o $(REP_OBJ)/DM_COM_ConnectionSecurity.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/DM_COM_ConnectionSecurity.c
 
 clean:
 	rm -f $(REP_OBJ)/*.o src/*~ inc/*~

@@ -45,31 +45,31 @@ OBJETS  = $(REP_OBJ)/attr.o         \
 all: $(OBJETS)
 
 $(REP_OBJ)/attr.o: src/attr.c
-	$(CC) -o $(REP_OBJ)/attr.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/attr.c
+	@$(CC) -o $(REP_OBJ)/attr.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/attr.c
 
 $(REP_OBJ)/document.o: src/document.c
-	$(CC) -o $(REP_OBJ)/document.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/document.c
+	@$(CC) -o $(REP_OBJ)/document.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/document.c
 
 $(REP_OBJ)/element.o: src/element.c
-	$(CC) -o $(REP_OBJ)/element.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/element.c
+	@$(CC) -o $(REP_OBJ)/element.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/element.c
 
 $(REP_OBJ)/ixml.o: src/ixml.c
-	$(CC) -o $(REP_OBJ)/ixml.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixml.c
+	@$(CC) -o $(REP_OBJ)/ixml.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixml.c
 
 $(REP_OBJ)/ixmlmembuf.o: src/ixmlmembuf.c
-	$(CC) -o $(REP_OBJ)/ixmlmembuf.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixmlmembuf.c
+	@$(CC) -o $(REP_OBJ)/ixmlmembuf.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixmlmembuf.c
 
 $(REP_OBJ)/ixmlparser.o: src/ixmlparser.c
-	$(CC) -o $(REP_OBJ)/ixmlparser.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixmlparser.c
+	@$(CC) -o $(REP_OBJ)/ixmlparser.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/ixmlparser.c
 
 $(REP_OBJ)/namedNodeMap.o: src/namedNodeMap.c
-	$(CC) -o $(REP_OBJ)/namedNodeMap.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/namedNodeMap.c
+	@$(CC) -o $(REP_OBJ)/namedNodeMap.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/namedNodeMap.c
 
 $(REP_OBJ)/node.o: src/node.c
-	$(CC) -o $(REP_OBJ)/node.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/node.c
+	@$(CC) -o $(REP_OBJ)/node.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/node.c
 
 $(REP_OBJ)/nodeList.o: src/nodeList.c
-	$(CC) -o $(REP_OBJ)/nodeList.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/nodeList.c
+	@$(CC) -o $(REP_OBJ)/nodeList.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/nodeList.c
 
 
 clean:

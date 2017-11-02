@@ -35,11 +35,11 @@ OBJETS_GEN = $(wildcard $(REP_OBJ)/*.o)
 
 
 all: $(OBJETS)
-	$(CC) -o $(APPLI_DIR)/$(APPLI_NAME) $(OBJETS_GEN) $(LIBS) $(LDFLAGS) 
+	@$(CC) -o $(APPLI_DIR)/$(APPLI_NAME) $(OBJETS_GEN) $(LIBS) $(LDFLAGS) 
 
 
 $(REP_OBJ)/dm_main.o: src/dm_main.c
-	$(CC) -o $(REP_OBJ)/dm_main.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_main.c
+	@$(CC) -o $(REP_OBJ)/dm_main.o $(CWMP_C_FLAGS) $(CWMP_CPP_FLAGS) $(INCS) -c src/dm_main.c
 
 
 install:
