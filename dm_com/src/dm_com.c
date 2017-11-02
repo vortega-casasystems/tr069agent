@@ -456,7 +456,7 @@ DM_HttpCallbackClientData(char   * httpDataMsgString,
 
    // Dipslay Debug Info
    char* tmpStr = DM_ENG_strndup((char*) httpDataMsgString, msgSize);
-   DBG( "message =\n%s\nMsgSize = %d", (char*) tmpStr, msgSize );
+   DBG( "message =\n%s\nMsgSize = %lu", (char*) tmpStr, msgSize );
 
 	// Make sure in case of Digest Authentication, the session is authorized
 	// The string AUTHORIZATION_REQUIRED must be present in a non soap message
@@ -603,7 +603,7 @@ DM_HttpCallbackClientHeader(char   * httpHeaderMsgString,
   char       * pData	  = NULL;
 	static int   nRedirectedCounter = 0;
 
-	DBG( "message =\n%s\nMsgSize = %d\nhttpResponseCode = %d", (char*)httpHeaderMsgString, msgSize, lastHttpResponseCode  );
+	DBG( "message =\n%s\nMsgSize = %lu\nhttpResponseCode = %d", (char*)httpHeaderMsgString, msgSize, lastHttpResponseCode  );
 	
 	// -------------------------------------------------------------------------
 	// Read the data
@@ -961,7 +961,7 @@ DM_AnalyseSoapMessage(
      nRet = DM_OK;
 	} else {
     // Error, Invalid Parameter
-    nRet = (int ) ERROR_INVALID_PARAMETERS;
+    nRet = DM_ERR;
 	}
 	
 	DBG("DM_AnalyseSoapMessage - End");
