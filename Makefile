@@ -48,8 +48,14 @@
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
 
+ARCH:=x86
+
 # COMPILATOR DECLARATION
-CC = gcc -fno-stack-protector
+ifeq ($(ARCH),x86)
+  CC = gcc
+else ifeq ($(ARCH),mips)
+  CC = mipsel-unknown-linux-gnu-gcc
+endif
 
 # NAME OF THE GENERATED APPLICATION
 CWMP_APPLICATION_NAME = cwmpd
@@ -80,7 +86,7 @@ endif
 DEFAULT_DEBUG_FLAG    = N
 DEBUG                 = $(DEFAULT_DEBUG_FLAG(DBG))$(DBG)
 ifeq ($(DEBUG), Y)
-  CWMP_DEBUG_FLAG = -ggdb -O0
+  CWMP_DEBUG_FLAG = -ggdb -O0 -Werror
 else
   CWMP_OPTIM_FLAG=-Os -fno-strict-aliasing
 endif
