@@ -303,9 +303,9 @@ static bool _splitSourceAndData(const char* data, OUT int* pSrc,OUT char** pEndD
 int DM_ENG_Device_getValue(const char* name, const char* systemData, OUT char** pVal)
 {
   const char* paramNameStr = _extractParameterName(name); // Parameter Name without the Device Type Tag
-  char * ouiStr          = NULL;
-  char * productClassStr = NULL;
-  char * serialNumberStr = NULL;
+  //char * ouiStr          = NULL;
+  //char * productClassStr = NULL;
+  //char * serialNumberStr = NULL;
   int    strSize = 0;
   char * nextSoftwareVersionStr = NULL;
  

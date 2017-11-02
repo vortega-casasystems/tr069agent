@@ -194,8 +194,8 @@ do {                                                                            
     char filename[PATH_MAX];                                                                                    \
     struct sigaction new_sigaction;                                                                             \
     if( __FTX_TRACE_FILTER_MAX > ( 8 * sizeof( ftx_trace_filter_t ) ) ) {                                       \
-        fprintf( stderr, "ERROR: The number of defined filters (%d) is bigger "                                 \
-                         "than the maximum number of allowed filters (%d).\n",                                  \
+        fprintf( stderr, "ERROR: The number of defined filters (%d) is bigger "                                \
+                         "than the maximum number of allowed filters (%lu).\n",                                 \
                          __FTX_TRACE_FILTER_MAX, 8 * sizeof( ftx_trace_filter_t ) );                            \
         exit( -1 );                                                                                             \
     }                                                                                                           \

@@ -2058,7 +2058,7 @@ Parser_processContent( IN Parser * xmlParser,
                        IN IXML_Node * node )
 {
     char *pEndContent;
-    BOOL bReadContent;
+    //BOOL bReadContent;
     int tokenLength;
     char *notAllowed = "]]>";
     char *pCurToken = NULL;
@@ -2115,9 +2115,9 @@ Parser_processContent( IN Parser * xmlParser,
             pEndContent++;
         }
 
-        if( *pEndContent == '\0' ) {
-            bReadContent = FALSE;
-        }
+        //if( *pEndContent == '\0' ) {
+        //    bReadContent = FALSE;
+        //}
 
         if( strncmp
             ( pEndContent, ( const char * )notAllowed,

@@ -128,7 +128,7 @@ DM_ACS_InformCallback(
    // Check parameters
    if ( (id != NULL) && (events != NULL) && (parameterList != NULL) )
    {
-      // Optimisation pour le cas déconnecté : si pas d'adresse IP locale, pas la peine de tenter la connection à l'ACS
+      // Optimisation pour le cas dï¿½connectï¿½ : si pas d'adresse IP locale, pas la peine de tenter la connection ï¿½ l'ACS
       bool ready = true;
       int i;
       for (i = 0; parameterList[i] != NULL; i++)
@@ -341,7 +341,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
         EXEC_ERROR( "Missing manufacturer name!!" );
       }
 
-    xmlAddNode(SoapMsg.pParser,      // doc
+      xmlAddNode(SoapMsg.pParser,      // doc
                pRefDeviceIdTag,      // parent node
                INFORM_MANUFACTURER,  // Node Name 
                 NULL,                 // Attribut Name
@@ -358,7 +358,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
       EXEC_ERROR( "Missing OUI (Organizational Unique Identifier)!!" );
       }
 
-    xmlAddNode(SoapMsg.pParser,  // doc
+      xmlAddNode(SoapMsg.pParser,  // doc
                pRefDeviceIdTag,  // parent node
                INFORM_OUI,       // Node Name 
                 NULL,             // Attribut Name
@@ -374,7 +374,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
         EXEC_ERROR( "Missing product class!!" );
       }
 
-    xmlAddNode(SoapMsg.pParser,     // doc
+      xmlAddNode(SoapMsg.pParser,     // doc
                pRefDeviceIdTag,     // parent node
                INFORM_PRODUCTCLASS, // Node Name 
                 NULL,                // Attribut Name
@@ -389,7 +389,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
         EXEC_ERROR( "Missing serial number!!" );
       }
 
-    xmlAddNode(SoapMsg.pParser,     // doc
+      xmlAddNode(SoapMsg.pParser,     // doc
                pRefDeviceIdTag,     // parent node
                INFORM_SERIALNUMBER, // Node Name 
                 NULL,                // Attribut Name
@@ -456,7 +456,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
       // Add a MaxEnveloppes tag with a value set to 1 according to the TR-069 document (2007)
       // ---------------------------------------------------------------------
       snprintf( pTmpBuffer, TMPBUFFER_SIZE, "%d", MaxEnveloppes);
-    xmlAddNode(SoapMsg.pParser,       // XML Doc        
+      xmlAddNode(SoapMsg.pParser,       // XML Doc        
                pRefInformTag,        // XML Parent Node   
                INFORM_MAXENVELOPES, // Node Name
                NULL,                 // Attribute Name
@@ -481,7 +481,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
       // ---------------------------------------------------------------------
       snprintf( pTmpBuffer, TMPBUFFER_SIZE, "%d", RetryCounts);
 
-    xmlAddNode(SoapMsg.pParser,       // XML Doc        
+      xmlAddNode(SoapMsg.pParser,       // XML Doc        
                pRefInformTag,        // XML Parent Node   
                INFORM_RETRYCOUNT,   // Node Name
                NULL,                 // Attribute Name
@@ -510,7 +510,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
                               
 
       GenericXmlNodePtr pRefParamStruct = NULL;
-      GenericXmlNodePtr pRefParamValue  = NULL;
+      //GenericXmlNodePtr pRefParamValue  = NULL;
       // char      * lanIpAddressStr = NULL;
       for ( nI=0 ; nI<nNbParameterValueStruct ; nI++ ){
 
@@ -557,7 +557,7 @@ DM_ACS_Inform(DM_ENG_DeviceIdStruct       * DeviceId,
                break;
          }
 
-      pRefParamValue = xmlAddNode(SoapMsg.pParser,    // doc
+         xmlAddNode(SoapMsg.pParser,    // doc
                                   pRefParamStruct,    // parent node
                                   INFORM_VALUE,       // new node tag
                                   INFORM_VALUE_ATTR,  // Attribute Name

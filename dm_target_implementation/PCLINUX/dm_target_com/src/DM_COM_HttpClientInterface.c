@@ -81,7 +81,7 @@ static void   _CloseHttpSession(bool closeMode);
 // -------------------------------------------------------------
 #define  CURL_TIMEOUT          (60)
 #define  CURL_GET_FILE_TIMEOUT (300) // Maximum amount of time to download the File.
-                                     // Attention, Ne doit pas être trop car peut être bloquant, ni trop court pour avoir assez de temps de téléchargement !!
+                                     // Attention, Ne doit pas ï¿½tre trop car peut ï¿½tre bloquant, ni trop court pour avoir assez de temps de tï¿½lï¿½chargement !!
 #define  CURL_PUT_FILE_TIMEOUT (300) // Maximum amount of time to upload the File
 #define  CURL_CONNECT_TIMEOUT  (30)
 #define  CURL_NOSIGNAL         (1)
@@ -858,7 +858,7 @@ static size_t read_callback(void *ptr, size_t size, size_t nmemb, FILE *stream)
       by default internally */
    retcode = fread(ptr, size, nmemb, stream);
  
-   DBG("We read %d bytes from file", retcode);
+   DBG("We read %lu bytes from file", retcode);
  
    return retcode;
  }
