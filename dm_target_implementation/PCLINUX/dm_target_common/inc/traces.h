@@ -272,7 +272,7 @@ do {                                                                            
     if(level == __FTX_WARNING_LEVEL) {fprintf( ftx_traces_out, " - WARN - " ); }        \
     if(level == __FTX_INFO_LEVEL)    {fprintf( ftx_traces_out, " - INFO - " ); }        \
     if(level == __FTX_VERBOSE_LEVEL) {fprintf( ftx_traces_out, " - DBG - " ); }         \
-    fprintf( ftx_traces_out, __VA_ARGS__ );                                         \
+    fprintf( ftx_traces_out, "%s", __VA_ARGS__ );                                         \
     fflush( ftx_traces_out );                                                       \
     errno = __errno;                                                                \
 } while( 0 )
