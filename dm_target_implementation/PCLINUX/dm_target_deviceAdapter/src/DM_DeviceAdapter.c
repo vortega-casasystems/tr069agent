@@ -248,7 +248,7 @@ void DM_ENG_Device_openSession() {
 
   if ((_deviceInterfaceStubFileMutex == NULL) || (_mutexDownloadThread == NULL)) return; // ressource non disponible
 
-  _transferLock(); // exlusion mutuelle avec les téléchargements (pas obligatoire. A adapter à l'implémentation des download et upload)
+  _transferLock(); // exlusion mutuelle avec les tï¿½lï¿½chargements (pas obligatoire. A adapter ï¿½ l'implï¿½mentation des download et upload)
 
   // Buil the info list (info list is build from the DeviceInterfaceStubFile file) and lock the mutex
   _buildInfoList();
@@ -318,6 +318,7 @@ int DM_ENG_Device_getValue(const char* name, const char* systemData, OUT char** 
 
   DBG("Parameter Name to Retrieve: %s", paramNameStr);
 
+  /*
   if(0 == strcmp(paramNameStr, "ManagementServer.ConnectionRequestUsername")) {
     DBG("BUILD ConnectionRequestUsername");
 
@@ -341,7 +342,9 @@ int DM_ENG_Device_getValue(const char* name, const char* systemData, OUT char** 
 
     }
    
-  } else if(0 == strcmp(paramNameStr, "ManagementServer.ConnectionRequestURL")) {
+  } else 
+  */
+  if(0 == strcmp(paramNameStr, "ManagementServer.ConnectionRequestURL")) {
     DBG("BUILD ConnectionRequestURL");
 
     // Build the Connection Request URL http://IPAddress:50805/16random
@@ -388,7 +391,7 @@ int DM_ENG_Device_getValue(const char* name, const char* systemData, OUT char** 
 
   } else {
 
-    // On recherche d'abord le paramètre dans DeviceInterfaceStubFile, fichier qui se place en coupure vis-à-vis de l'accès système
+    // On recherche d'abord le paramï¿½tre dans DeviceInterfaceStubFile, fichier qui se place en coupure vis-ï¿½-vis de l'accï¿½s systï¿½me
     char * tmpStr = _retrieveValueFromInfoList(paramNameStr);
 
     if (tmpStr != NULL)
@@ -572,7 +575,7 @@ int DM_ENG_Device_deleteObject(const char* objName, unsigned int instanceNumber)
 /**
  * Commands the device to reboot.
  * 
- * @param factoryReset Indicates if or not the device must perform à factory reset.
+ * @param factoryReset Indicates if or not the device must perform ï¿½ factory reset.
  */
 void DM_ENG_Device_reboot(bool factoryReset)
 {
@@ -593,7 +596,7 @@ void DM_ENG_Device_reboot(bool factoryReset)
  */
 int DM_ENG_Device_performDiagnostics(const char* objName, DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_ParameterValueStruct** pResult[])
 {
-   int res = 9003; // Diagnostic non supporté
+   int res = 9003; // Diagnostic non supportï¿½
 
    if (strcmp(objName, DM_ENG_LAN_IP_PING_DIAG_OBJECT_NAME) == 0)
    {
@@ -636,7 +639,7 @@ int DM_ENG_Device_getObject(const char* objName, const char* data, OUT DM_ENG_Pa
       (*pParamVal)[6] = NULL;
       res = 0;
    }
-   else if ((strcmp(shortname, "LAN.Stats.")==0) && (data == NULL)) // on utilise cette version bouchonnée seulement si data == NULL
+   else if ((strcmp(shortname, "LAN.Stats.")==0) && (data == NULL)) // on utilise cette version bouchonnï¿½e seulement si data == NULL
    {
       time_t currentTime;
       time(&currentTime);
@@ -1016,7 +1019,7 @@ static int _getStringValue(char* linePtr, char** valueStr)
   *valueStr = val;
 
   val = DM_ENG_decodeValue(*valueStr);
-  if (val != NULL) // il y avait des car spéciaux dans la chaîne
+  if (val != NULL) // il y avait des car spï¿½ciaux dans la chaï¿½ne
   {
      free(*valueStr);
      *valueStr = val;
@@ -1645,7 +1648,7 @@ static int _setValue(const char* name, char* val)
 
 static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_ParameterValueStruct** pResult[])
 {
-   int res = 1; // par défaut, résultat asynchrone
+   int res = 1; // par dï¿½faut, rï¿½sultat asynchrone
 
    char* host = NULL;
    int numberOfRepetitions = 4;
@@ -1653,7 +1656,7 @@ static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Parame
    int dataSize = 56;
    int dscp = 0;
    int i;
-   for (i=0; paramList[i] != NULL; i++) // on récupère les valeurs qui peuvent être dans le désordre
+   for (i=0; paramList[i] != NULL; i++) // on rï¿½cupï¿½re les valeurs qui peuvent ï¿½tre dans le dï¿½sordre
    {
       if (strcmp(paramList[i]->parameterName, DM_ENG_LAN_IP_PING_HOST_NAME)==0)
       {
@@ -1679,12 +1682,12 @@ static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Parame
 
    if (host == NULL) // sinon on laisse tomber le test
    {
-      // DiagnosticsState positionné à "Error_Internal"
+      // DiagnosticsState positionnï¿½ ï¿½ "Error_Internal"
       *pResult = DM_ENG_newTabParameterValueStruct(1);
       (*pResult)[0] = DM_ENG_newParameterValueStruct(DM_ENG_LAN_IP_PING_DIAG_STATE_NAME, DM_ENG_ParameterType_UNDEFINED, DM_ENG_ERROR_INTERNAL_STATE);
       (*pResult)[1] =NULL;
 
-      res = 0; // résultat fourni de façon synchrone
+      res = 0; // rï¿½sultat fourni de faï¿½on synchrone
    }
    else
    {
@@ -1695,12 +1698,12 @@ static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Parame
 
       if (!foundHost)
       {
-         // DiagnosticsState positionné à "Error_CannotResolveHostName"
+         // DiagnosticsState positionnï¿½ ï¿½ "Error_CannotResolveHostName"
          *pResult = DM_ENG_newTabParameterValueStruct(1);
          (*pResult)[0] = DM_ENG_newParameterValueStruct(DM_ENG_LAN_IP_PING_DIAG_STATE_NAME, DM_ENG_ParameterType_UNDEFINED, DM_ENG_ERROR_CANNOT_RESOLVE_STATE);
          (*pResult)[1] =NULL;
 
-         res = 0; // résultat fourni de façon synchrone
+         res = 0; // rï¿½sultat fourni de faï¿½on synchrone
       }
       else
       {
@@ -1724,7 +1727,7 @@ static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Parame
          free(str);
          (*pResult)[6] = NULL;
 
-         res = 0; // résultat fourni de façon synchrone
+         res = 0; // rï¿½sultat fourni de faï¿½on synchrone
       }
    }
 
@@ -1733,14 +1736,14 @@ static int _pingTest(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Parame
 
 static int _traceroute(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_ParameterValueStruct** pResult[])
 {
-   int res = 1; // par défaut, résultat asynchrone
+   int res = 1; // par dï¿½faut, rï¿½sultat asynchrone
 
    char* host = NULL;
    long timeout = 5000;
    int dataBlockSize = 40;
    int maxHopCount = 30;
    int i;
-   for (i=0; paramList[i] != NULL; i++) // on récupère les valeurs qui peuvent être dans le désordre
+   for (i=0; paramList[i] != NULL; i++) // on rï¿½cupï¿½re les valeurs qui peuvent ï¿½tre dans le dï¿½sordre
    {
       if (strcmp(paramList[i]->parameterName, DM_ENG_LAN_TRACEROUTE_HOST_NAME)==0)
       {
@@ -1762,12 +1765,12 @@ static int _traceroute(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Para
 
    if (host == NULL) // sinon on laisse tomber le test
    {
-      // DiagnosticsState positionné à "Error_Internal"
+      // DiagnosticsState positionnï¿½ ï¿½ "Error_Internal"
       *pResult = DM_ENG_newTabParameterValueStruct(1);
       (*pResult)[0] = DM_ENG_newParameterValueStruct(DM_ENG_LAN_TRACEROUTE_DIAG_STATE_NAME, DM_ENG_ParameterType_UNDEFINED, DM_ENG_ERROR_INTERNAL_STATE);
       (*pResult)[1] =NULL;
 
-      res = 0; // résultat fourni de façon synchrone
+      res = 0; // rï¿½sultat fourni de faï¿½on synchrone
    }
    else
    {
@@ -1779,12 +1782,12 @@ static int _traceroute(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Para
 
       if (!foundHost)
       {
-         // DiagnosticsState positionné à "Error_CannotResolveHostName"
+         // DiagnosticsState positionnï¿½ ï¿½ "Error_CannotResolveHostName"
          *pResult = DM_ENG_newTabParameterValueStruct(1);
          (*pResult)[0] = DM_ENG_newParameterValueStruct(DM_ENG_LAN_TRACEROUTE_DIAG_STATE_NAME, DM_ENG_ParameterType_UNDEFINED, DM_ENG_ERROR_CANNOT_RESOLVE_STATE);
          (*pResult)[1] =NULL;
 
-         res = 0; // résultat fourni de façon synchrone
+         res = 0; // rï¿½sultat fourni de faï¿½on synchrone
       }
       else
       {
@@ -1807,7 +1810,7 @@ static int _traceroute(DM_ENG_ParameterValueStruct* paramList[], OUT DM_ENG_Para
          }
          free(routeHops);
 
-         res = 0; // résultat fourni de façon synchrone
+         res = 0; // rï¿½sultat fourni de faï¿½on synchrone
       }
    }
 
@@ -1862,12 +1865,12 @@ int DM_ENG_Device_getSampleData(const char* objName, time_t timeStampBefore, con
          res = DM_ENG_Device_getObject(objName, data, &parameterList);
          if (res == 0)
          {
-            *pSampleData = DM_ENG_newSampleDataStruct(objName, parameterList, time(NULL), true, false); // N.B. continued à true. Pourrait être positionné à !_starting, ou autre...
+            *pSampleData = DM_ENG_newSampleDataStruct(objName, parameterList, time(NULL), true, false); // N.B. continued ï¿½ true. Pourrait ï¿½tre positionnï¿½ ï¿½ !_starting, ou autre...
             DM_ENG_deleteTabParameterValueStruct(parameterList);
          }
          else
          {
-            printf("Polling de données statistiques sur objet inconnu : %s\n", objName);
+            printf("Polling de donnï¿½es statistiques sur objet inconnu : %s\n", objName);
          }
       }
       else
@@ -1884,7 +1887,7 @@ static char* _statObject = DM_PREFIX "Services.STBService.1.ServiceMonitoring.Ma
 
 static void _testAction()
 {
-   // notification spontanée de nouvelles données statistiques
+   // notification spontanï¿½e de nouvelles donnï¿½es statistiques
    DM_ENG_SampleDataStruct* sampleData = NULL;
    if (DM_ENG_Device_getSampleData(_statObject, 0, "1", &sampleData) == 0)
    {

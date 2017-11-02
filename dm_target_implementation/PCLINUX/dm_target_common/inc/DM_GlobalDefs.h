@@ -75,7 +75,7 @@ extern char* DATA_PATH;
 #define _SETVOUCHERS_RPC_SUPPORTED               false  // Not implemented
 #define _GETOPTIONS_RPC_SUPPORTED                false  // Not implemented
 
-#define _FORCE_CWMP_1_0_USAGE                    true   // Karma supports only cwmp-1-0
+#define _FORCE_CWMP_1_0_USAGE                    false   // Karma supports only cwmp-1-0
 
 /* ------ Define this macro to prevent the DM Agent to implement the persistence of the scheduled inform ------- */
 // #define NO_PERSISTENT_SCHEDULED_INFORM 1

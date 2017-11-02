@@ -23,8 +23,11 @@ DeviceInfo.SoftwareVersion;STRING;1;0;0;2;1;0;;;0;0
 DeviceInfo.ProvisioningCode;STRING;1;1;1;1;1;0;;;0;0
 DeviceInfo.DeviceStatus;STRING;2;1;0;0;0;0;;;0;0
 DeviceInfo.SpecVersion;STRING;1;0;0;0;1;0;;1.1;0;0
+DeviceInfo.MemoryStatus.;ANY;0;0;0;0;0;0;;;0;0
+DeviceInfo.MemoryStatus.Total;UINT;0;0;1;0;1;0;;5000;0;0
+DeviceInfo.MemoryStatus.Free;UINT;0;1;1;0;1;0;;3000;0;0
 ManagementServer.;ANY;0;0;0;0;0;0;;;0;0
-ManagementServer.URL;STRING;0;1;1;2;0;0;;http://my.acs.url/tr69;0;0
+ManagementServer.URL;STRING;0;1;1;2;0;0;;http://10.10.0.170:8080/hems-web-ui/ws/cwmp;0;0
 ManagementServer.Username;STRING;0;1;1;2;0;0;;;0;0
 ManagementServer.Password;STRING;0;1;1;2;0;0;;;0;0
 ManagementServer.ParameterKey;STRING;0;1;1;2;1;0;;;0;0

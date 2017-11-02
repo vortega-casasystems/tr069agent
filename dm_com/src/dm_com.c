@@ -478,7 +478,7 @@ DM_HttpCallbackClientData(char   * httpDataMsgString,
     return (-1) ;
 	}
 
-   // A vérifier validité lexicale du namespace trouvé !!
+   // A vï¿½rifier validitï¿½ lexicale du namespace trouvï¿½ !!
    if (( DM_COM_SoapEnv_NS == NULL ) || ( DM_COM_SoapEnv_NS == _DEFAULT_SOAPENV_NS))
    {
       char* c1 = strchr( tmpStr, '<' );
@@ -608,7 +608,7 @@ DM_HttpCallbackClientHeader(char   * httpHeaderMsgString,
 	// Read the data
 	// -------------------------------------------------------------------------
    size_t dataSize = msgSize;
-   while ((dataSize > 0) && (httpHeaderMsgString[dataSize-1] < ' ')) { dataSize--; } // on ignore les derniers caractères CR, LF, ...
+   while ((dataSize > 0) && (httpHeaderMsgString[dataSize-1] < ' ')) { dataSize--; } // on ignore les derniers caractï¿½res CR, LF, ...
 	pData  = (char*)malloc( dataSize + 1 );
 	memcpy( pData, httpHeaderMsgString, dataSize );
 	*(pData+dataSize) = '\0';
@@ -670,7 +670,7 @@ DM_HttpCallbackClientHeader(char   * httpHeaderMsgString,
         if ( g_DmComData.bSession ) {
 	        if ( !g_DmComData.bIRTCInProgess ){
             DBG( "Ask to the DM_ENGINE if we can close the session..." );
-            g_DmComData.bIRTCInProgess = DM_ENG_IsReadyToClose( DM_ENG_EntityType_ACS ); // On ne tient pas compte du pSoapMsg->nHoldRequest si réponse vide
+            g_DmComData.bIRTCInProgess = DM_ENG_IsReadyToClose( DM_ENG_EntityType_ACS ); // On ne tient pas compte du pSoapMsg->nHoldRequest si rï¿½ponse vide
             DBG( "Session = %d - IRTC = %d", g_DmComData.bSession, (int)g_DmComData.bIRTCInProgess );
             if ( g_DmComData.bIRTCInProgess ) {
 	            DBG( "DM_ENGINE ready to close the session : OK" );
@@ -1260,7 +1260,7 @@ DM_ParseSoapBodyMessage(IN GenericXmlNodePtr pBody, IN char* soapIdStr, IN unsig
         pValTypeStr    = xmlGetAttributValue(paramValueNode, ATTR_TYPE);
 
         // Check strings
-        if((NULL == parameterNameStr) || (NULL == parameterValueStr) || (NULL == pValTypeStr)){
+        if((NULL == parameterNameStr) || (NULL == parameterValueStr)) { // || (NULL == pValTypeStr)){
           EXEC_ERROR( "Some element(s) haven't been found in the soap message!!" );
 	        xmlFreeNodesList( paramValStructNodeList );
            DM_ENG_deleteTabParameterValueStruct(pParameterList);
@@ -1271,15 +1271,19 @@ DM_ParseSoapBodyMessage(IN GenericXmlNodePtr pBody, IN char* soapIdStr, IN unsig
           return nRet;
         }
 
-        // Convert the Value Type
-        if(DM_OK != DM_FindTypeParameter(pValTypeStr, &valueTypeFound )){
-          EXEC_ERROR( "Invalid Value Type" );
-	        xmlFreeNodesList( paramValStructNodeList );
-           DM_ENG_deleteTabParameterValueStruct(pParameterList);
-          // Send a fault SOAP message to the ACS server (NOK)
-          DM_SoapFaultResponse( soapIdStr, DM_ENG_INVALID_ARGUMENTS );
-          DM_ENG_FREE(pValTypeStr);
-          return nRet;
+        if (pValTypeStr != NULL) {
+          // Convert the Value Type
+          if(DM_OK != DM_FindTypeParameter(pValTypeStr, &valueTypeFound )){
+            EXEC_ERROR( "Invalid Value Type" );
+            xmlFreeNodesList( paramValStructNodeList );
+            DM_ENG_deleteTabParameterValueStruct(pParameterList);
+            // Send a fault SOAP message to the ACS server (NOK)
+            DM_SoapFaultResponse( soapIdStr, DM_ENG_INVALID_ARGUMENTS );
+            DM_ENG_FREE(pValTypeStr);
+            return nRet;
+          }
+        } else {
+          valueTypeFound = DM_ENG_ParameterType_BOOLEAN;
         }
         DM_ENG_FREE(pValTypeStr);
 	
@@ -3206,7 +3210,7 @@ DM_SUB_GetParameterNames(IN const char *pSoapId,
 				
 				
 				// Add a writable tag with its value
-				snprintf( pTmpBuffer, TMPBUFFER_SIZE, "%d", (int)pResult[nI]->writable );
+				snprintf( pTmpBuffer, TMPBUFFER_SIZE, "%s", ((int)pResult[nI]->writable)?"true":"false" );
         xmlAddNode(SoapMsg.pParser,             // XML Document
                    pRefParamStruct,             // XML Parent Node
                    PARAMETERINFOSTRUCT_WRITABLE,// Node Name

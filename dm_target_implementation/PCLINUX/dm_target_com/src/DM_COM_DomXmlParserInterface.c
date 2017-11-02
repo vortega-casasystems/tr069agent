@@ -317,13 +317,17 @@ xmlGetAttributValue(IN GenericXmlNodePtr     xmlNodePtr,
   
   attributListPtr = ixmlNode_getAttributes((IXML_Node*)xmlNodePtr);
   while(NULL != attributListPtr) {
-    if(0 == strcmp(attributNameStr, attributListPtr->nodeItem->nodeName)) {
-      // Retrieve the attribut value
-      if(NULL != attributListPtr->nodeItem->nodeValue) {
-        attrValueToReturnStr = strdup(attributListPtr->nodeItem->nodeValue);
+    printf("--------attributNameStr = %s\n", attributNameStr);
+    printf("--------attributListPtr = %x\n", attributListPtr->nodeItem);
+    if (attributListPtr->nodeItem != NULL) {
+      if(0 == strcmp(attributNameStr, attributListPtr->nodeItem->nodeName)) {
+        // Retrieve the attribut value
+        if(NULL != attributListPtr->nodeItem->nodeValue) {
+          attrValueToReturnStr = strdup(attributListPtr->nodeItem->nodeValue);
+        }
+        // return (char * ) (attributListPtr->nodeItem->nodeValue);
+        break;
       }
-      // return (char * ) (attributListPtr->nodeItem->nodeValue);
-      break;
     }
     attributListPtr = attributListPtr->next;
   }
