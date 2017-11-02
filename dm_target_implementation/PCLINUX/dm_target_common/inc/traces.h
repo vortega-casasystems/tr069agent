@@ -195,8 +195,8 @@ do {                                                                            
     struct sigaction new_sigaction;                                                                             \
     if( __FTX_TRACE_FILTER_MAX > ( 8 * sizeof( ftx_trace_filter_t ) ) ) {                                       \
         fprintf( stderr, "ERROR: The number of defined filters (%d) is bigger "                                \
-                         "than the maximum number of allowed filters (%lu).\n",                                 \
-                         __FTX_TRACE_FILTER_MAX, 8 * sizeof( ftx_trace_filter_t ) );                            \
+                         "than the maximum number of allowed filters (%d).\n",                                 \
+                         __FTX_TRACE_FILTER_MAX, 8 * (int)sizeof( ftx_trace_filter_t ) );                            \
         exit( -1 );                                                                                             \
     }                                                                                                           \
     if( ( SIGRTMIN + __FTX_TRACES_SIG_OFFSET ) > SIGRTMAX ) {                                                   \

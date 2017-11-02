@@ -858,7 +858,7 @@ static size_t read_callback(void *ptr, size_t size, size_t nmemb, FILE *stream)
       by default internally */
    retcode = fread(ptr, size, nmemb, stream);
  
-   DBG("We read %lu bytes from file", retcode);
+   DBG("We read %d bytes from file", (int)retcode);
  
    return retcode;
  }
