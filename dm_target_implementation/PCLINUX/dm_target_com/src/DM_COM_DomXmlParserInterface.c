@@ -317,8 +317,6 @@ xmlGetAttributValue(IN GenericXmlNodePtr     xmlNodePtr,
   
   attributListPtr = ixmlNode_getAttributes((IXML_Node*)xmlNodePtr);
   while(NULL != attributListPtr) {
-    printf("--------attributNameStr = %s\n", attributNameStr);
-    printf("--------attributListPtr = %x\n", attributListPtr->nodeItem);
     if (attributListPtr->nodeItem != NULL) {
       if(0 == strcmp(attributNameStr, attributListPtr->nodeItem->nodeName)) {
         // Retrieve the attribut value

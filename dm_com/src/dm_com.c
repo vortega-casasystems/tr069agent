@@ -52,6 +52,7 @@
 #include "CMN_Trace.h"
 #include "DM_ENG_Parameter.h"
 #include "DM_CMN_Thread.h"
+#include "DM_ENG_ParameterManager.h"
 
 // Enable the tracing support only if the debug mode is enabled
 #ifdef DEBUG
@@ -1282,15 +1283,21 @@ DM_ParseSoapBodyMessage(IN GenericXmlNodePtr pBody, IN char* soapIdStr, IN unsig
             DM_ENG_FREE(pValTypeStr);
             return nRet;
           }
+          DM_ENG_FREE(pValTypeStr);
         } else {
-          valueTypeFound = DM_ENG_ParameterType_BOOLEAN;
+          DM_ENG_Parameter* param;
+          //DM_ENG_ParameterManager_loadLeafParameterValue(param, false);
+          param = DM_ENG_ParameterManager_getParameter(parameterNameStr);
+          if (param == NULL) {
+            return nRet;
+          }
+          valueTypeFound = param->type;
         }
-        DM_ENG_FREE(pValTypeStr);
-	
+
         // ------------------------------------------------------------
         // Add the information to the ParameterList
         // ------------------------------------------------------------
-        DBG( "Param.%d : Name = '%s', Value = '%s' ", n, parameterNameStr, parameterValueStr);
+        DBG( "Param.%d : Name = '%s', Value = '%s', Type = %d", n, parameterNameStr, parameterValueStr, valueTypeFound);
         pParameterList[n] = DM_ENG_newParameterValueStruct(parameterNameStr,
                                                            (DM_ENG_ParameterType) valueTypeFound,
                                                            parameterValueStr );
